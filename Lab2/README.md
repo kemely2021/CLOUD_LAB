@@ -88,7 +88,7 @@ Lab2/
 
 ```mermaid
 flowchart TD
-  user([👤 Usuario]) --> |frontend|[🌐 Frontend (HTML+JS)]
+  user([Usuario]) --> |frontend|[Frontend (HTML+JS)]
   frontend --> |backend|[⚙️ Backend (Flask API)]
   backend --> |db|[🗄 MySQL DB]
 
