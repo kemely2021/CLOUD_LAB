@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # CLOUD_LAB
 Laboratorios del curso de Cloud
 =======
