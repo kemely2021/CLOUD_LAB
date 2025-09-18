@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# CLOUD_LAB
-Laboratorios del curso de Cloud
-=======
-=======
->>>>>>> ba8a3ce (Lab2 CRUD SIMPLE)
 # 🚀 Proyecto Cloud Lab1 - Aplicación con Frontend, Backend y Base de Datos
 
 Este proyecto es un **laboratorio práctico de Cloud Computing** que muestra cómo desplegar una aplicación simple utilizando **contenedores Docker**.  
