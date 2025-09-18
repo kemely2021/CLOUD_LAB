@@ -98,4 +98,3 @@ flowchart TD
 - **Base de datos MySQL:** disponible en el puerto `3307` con usuario `root` y contraseña `root`.  
 
 ---
->>>>>>> 5e0dc6d (Primer commit)
