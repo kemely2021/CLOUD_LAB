@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+</head>
+<body>
+  <h1>👥 Gestión de Usuarios</h1>
+  
+  <form id="form">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Agregar</button>
+  </form>
+
+  <table border="1" id="tabla">
+    <thead>
+      <tr><th>ID</th><th>Nombre</th><th>Email</th><th>Acciones</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+const API = "http://localhost:5000/usuarios";
+
+// Mostrar usuarios
+function cargarUsuarios() {
+  fetch(API)
+    .then(r => r.json())
+    .then(data => {
+      let tbody = document.querySelector("#tabla tbody");
+      tbody.innerHTML = "";
+      data.forEach(u => {
+        let tr = document.createElement("tr");
+        tr.innerHTML = `<td>${u.id}</td><td>${u.nombre}</td><td>${u.email}</td>
+                        <td><button onclick="borrarUsuario(${u.id})">🗑</button></td>`;
+        tbody.appendChild(tr);
+      });
+    });
+}
+
+// Agregar usuario
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("email").value;
+
+  fetch(API, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({nombre, email})
+  }).then(() => cargarUsuarios());
+});
+
+// Borrar usuario
+function borrarUsuario(id) {
+  fetch(API + "/" + id, { method: "DELETE" })
+    .then(() => cargarUsuarios());
+}
+
+// Inicial
+cargarUsuarios();
+</script>
+</body>
+</html>
