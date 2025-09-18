@@ -80,16 +80,15 @@ Lab2/
    - **Backend** → [http://localhost:5000/usuarios](http://localhost:5000/usuarios)  
    - **Base de datos (opcional)** → `localhost:3307` (MySQL Workbench u otro cliente).
 ---
-![Datos](IMAGENES/datos.png)
-![Resultado](IMAGENES/resultado.png)
+![Datos](https://github.com/kemely2021/CLOUD_LAB/blob/main/IMAGENES/datos.png?raw=true)
 
 ## 📊 Diagrama de interacción
 
 ```mermaid
 flowchart TD
-  user[👤 Usuario] --> frontend[🌐 Frontend (HTML+JS)]
-  frontend --> backend[⚙️ Backend (Flask API)]
-  backend --> db[🗄 MySQL DB]
+  userNode[Usuario] --> frontendNode[Frontend (HTML+JS)]
+  frontendNode --> backendNode[Backend (Flask API)]
+  backendNode --> dbNode[MySQL DB]
 ```
 ---
 
