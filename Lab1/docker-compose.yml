@@ -1,0 +1,25 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=usuario
+      - DB_PASSWORD=clave123
+      - DB_NAME=prueba
+    depends_on:
+      - db
+
+  db:
+    build: ./db
+    restart: always
+    ports:
+      - "3307:3306"
