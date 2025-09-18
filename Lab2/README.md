@@ -80,18 +80,16 @@ Lab2/
    - **Backend** → [http://localhost:5000/usuarios](http://localhost:5000/usuarios)  
    - **Base de datos (opcional)** → `localhost:3307` (MySQL Workbench u otro cliente).
 ---
-<p align="left">
-  <img width="50%" height="50%" src="IMAGENES/datos.png">
-</p>
+![Datos](IMAGENES/datos.png)
+![Resultado](IMAGENES/resultado.png)
 
 ## 📊 Diagrama de interacción
 
 ```mermaid
 flowchart TD
-  user([Usuario]) --> |frontend|[Frontend (HTML+JS)]
-  frontend --> |backend|[⚙️ Backend (Flask API)]
-  backend --> |db|[🗄 MySQL DB]
-
+  user[👤 Usuario] --> frontend[🌐 Frontend (HTML+JS)]
+  frontend --> backend[⚙️ Backend (Flask API)]
+  backend --> db[🗄 MySQL DB]
 ```
 ---
 
